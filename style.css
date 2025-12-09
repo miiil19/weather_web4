@@ -1,0 +1,151 @@
+:root {
+    --accent: #d75496;
+    --bg: #fff5fb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: var(--bg);
+    color: #222;
+    -webkit-font-smoothing:antialiased;
+}
+
+.app {
+    max-width: 900px;
+    margin: 18px auto;
+    padding: 18px;
+}
+
+.title {
+    color: var(--accent);
+    margin: 0;
+}
+
+.header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+}
+
+.btn {
+    border: 1px solid rgba(0,0,0,0.08);
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor:pointer;
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: white;
+    border: none;
+}
+
+.controls { 
+    display:flex; 
+    gap:8px; 
+}
+
+.weather-container { 
+    display:flex; 
+    flex-direction:column; 
+    gap:14px; 
+    margin-bottom:20px; 
+}
+
+.weather-card {
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 12px;
+    background: #ffe6f3;
+}
+
+.card-top {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.card-title { font-weight:600; }
+
+.card-meta { 
+    font-size:12px; 
+    color:#333; 
+    opacity:0.8; 
+}
+
+.day {
+    margin-top:10px;
+    background: white;
+    padding:8px;
+    border-radius:8px;
+}
+
+.loading { 
+    font-style:italic; 
+    color:#555; 
+}
+
+.error { 
+    color: #cc2a2a; 
+    margin:6px 0 0 0; 
+}
+
+.add-city { margin-top: 10px; }
+
+.city-form { 
+    position:relative; 
+    max-width:520px; 
+}
+
+.input-row { 
+    display:flex; 
+    gap:8px; 
+}
+
+#cityInput {
+    flex:1;
+    padding:8px 10px;
+    border-radius:8px;
+    border: 2px solid var(--accent);
+    outline:none;
+}
+
+.suggestions {
+    list-style:none;
+    margin:6px 0 0 0;
+    padding:6px;
+    border-radius:8px;
+    background:white;
+    position:absolute;
+    width:100%;
+    max-height:160px;
+    overflow:auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    display:none;
+}
+
+.suggestions li { 
+    padding:6px; 
+    cursor:pointer; 
+}
+
+.suggestions li:hover { background:#ffd7ea; }
+
+@media (max-width:560px) {
+    .app { padding:12px; }
+    
+    .card-top { 
+        flex-direction:column; 
+        align-items:flex-start; 
+        gap:6px; 
+    }
+}
